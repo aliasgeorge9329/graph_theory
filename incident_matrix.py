@@ -19,17 +19,11 @@ def amatrix():
     a = np.matrix(a_matrix).astype(int)
     a_p, a_g = np.hsplit(a, np.array([p]))
 
-    print("\n Enter The Y matrix in (Enter Resistance Value)\n")
+    print("\n Enter The Y matrix in (Enter Y Value)\n")
     y_matrix = []
     for i in range(0, p):
         t = input().strip().split(" ")
-        t_ = []
-        for each in t:
-            if each != "0":
-                t_.append(1 / float(each))
-            else:
-                t_.append(int(each))
-        y_matrix.append(t_)
+        y_matrix.append(t)
     y = np.matrix(y_matrix).astype(float)
 
     print("\n Enter The Independent Ig matrix\n")
@@ -49,7 +43,7 @@ def amatrix():
     yp_in = np.linalg.inv(yp)
     print(f"\n(ap*y*ap_t)^-1\n{yp_in}")
 
-    vn = np.dot(np.dot(yp_in, a_g), np.transpose(ig))
+    vn = np.dot(np.dot(yp_in, a_g), np.transpose(ig))*-1
     vb = np.dot(np.transpose(a), vn)
     print("\nvn\n")
     print(vn)
