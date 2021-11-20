@@ -4,12 +4,12 @@ from cutset_matrix import *
 
 print("Welcome to the Graph theory Calculator\n")
 print("Select your choice")
-print("1.A matrix Analysis\n")
-print("2.Bf matrix Analysis\n")
-print("3.Qf matrix Analysis\n")
+print("1.A matrix Analysis")
+print("2.Bf matrix Analysis")
+print("3.Qf matrix Analysis")
 
 choice = int(input())
-
+print("\n")
 if choice == 1:
     print("1.A matrix Analysis\n")
     amatrix()
